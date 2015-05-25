@@ -14,6 +14,9 @@
 // add includes for headers that are used in most of your module's source files though.
 
 #if PLATFORM_IOS
+#import "IOSAppDelegate.h"
+#import "IOSView.h"
+
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <MoPub/MoPub.h>

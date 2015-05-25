@@ -76,7 +76,8 @@ namespace UnrealBuildTool.Rules
 				PublicAdditionalFrameworks.Add(
 					new UEBuildFramework(
 						"MoPub",
-						"../../lib/iOS/MoPub.embeddedframework.zip"
+						"../../lib/iOS/MoPub.embeddedframework.zip",
+						"Resources/MoPub.bundle"
 					)
 				);	
 				
