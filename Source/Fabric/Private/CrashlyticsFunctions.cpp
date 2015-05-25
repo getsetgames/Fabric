@@ -28,7 +28,7 @@ bool ValidateAttributes(FString Function, FString Event, TArray<FString> Attribu
 		return false;
 	}
 	
-	uint32 MaxAttributes = 20;
+	int32 MaxAttributes = 20;
 	
 	if (AttributeKeys.Num() > MaxAttributes)
 	{
