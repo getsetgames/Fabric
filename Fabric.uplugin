@@ -1,0 +1,21 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "Fabric",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "Get Set Games Inc.",
+	"CreatedByURL" : "https://github.com/getsetgames/Fabric",
+	"EngineVersion" : "4.7.0",
+	"Description" : "This plugin integrates aspects of the Fabric SDK, including Crashlytics and MoPub.",
+	"Category" : "Developer",
+	"EnabledByDefault" : false,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "Fabric",
+			"Type" : "Runtime"
+		}
+	]
+}
