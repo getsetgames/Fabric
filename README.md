@@ -32,3 +32,32 @@ Ensure that the plugin is enabled:
 3. Check the Enabled checkbox on the plugin. You may have to restart the editor after this step.
 
 ![EnableThePlugin](Resources/EnableThePlugin.png)
+
+### Add Extra Plist Data
+
+Open your Project Settings and navigate to the Platforms > iOS area. In the field called Additional Plist Data, add the following dictionary key, replacing the APIKey field value with your own Fabric API Key.
+
+```
+<key>Fabric</key>
+<dict>
+	<key>APIKey</key>
+	<string>YOUR_API_KEY</string>
+	<key>Kits</key>
+	<array>
+		<dict>
+			<key>KitInfo</key>
+			<dict/>
+			<key>KitName</key>
+			<string>Crashlytics</string>
+		</dict>
+		<dict>
+			<key>KitInfo</key>
+			<dict/>
+			<key>KitName</key>
+			<string>MoPub</string>
+		</dict>
+	</array>
+</dict>
+```
+
+![ExtraPlistData](Resources/ExtraPlistData.png)
