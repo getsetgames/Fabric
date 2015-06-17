@@ -37,7 +37,7 @@ Ensure that the plugin is enabled:
 
 Open your Project Settings and navigate to the Platforms > iOS area. In the field called Additional Plist Data, add the following dictionary key, replacing the APIKey field value with your own Fabric API Key.
 
-```
+```plist
 <key>Fabric</key>
 <dict>
 	<key>APIKey</key>
