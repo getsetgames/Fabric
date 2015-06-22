@@ -1,5 +1,5 @@
 # Fabric
-A plugin for Unreal Engine 4 that integrates Twitter's Fabric SDK, including Crashlytics and MoPub.
+A plugin for Unreal Engine 4 that integrates Twitter's Fabric SDK (including Crashlytics and MoPub) and makes its functionality available in blueprints.
 
 ## Setup
 
