@@ -26,7 +26,7 @@ bool UMoPubFunctions::MoPubHasInterstitial(FString AdUnitId)
 void UMoPubFunctions::MoPubShowInterstitial(FString AdUnitId)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		MPInterstitialAdController* Interstitial = [AdCache objectForKey:AdUnitId.GetNSString()];
 		
 		if (Interstitial && Interstitial.ready)
@@ -41,7 +41,7 @@ void UMoPubFunctions::MoPubShowInterstitial(FString AdUnitId)
 void UMoPubFunctions::MoPubCacheInterstitial(FString AdUnitId)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		MPInterstitialAdController* Interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:AdUnitId.GetNSString()];
 		[Interstitial loadAd];
 		[AdCache setObject:Interstitial forKey:AdUnitId.GetNSString()];

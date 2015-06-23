@@ -48,52 +48,42 @@ bool ValidateAttributes(FString Function, FString Event, TArray<FString> Attribu
 void UCrashlyticsFunctions::CrashlyticsCrash()
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] crash];
-	});
+	[[Crashlytics sharedInstance] crash];
 #endif
 }
 
 void UCrashlyticsFunctions::CrashlyticsThrowException()
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] throwException];
-	});
+	[[Crashlytics sharedInstance] throwException];
 #endif
 }
 
 void UCrashlyticsFunctions::CrashlyticsSetUserIdentifier(FString Id)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] setUserIdentifier:Id.GetNSString()];
-	});
+	[[Crashlytics sharedInstance] setUserIdentifier:Id.GetNSString()];
 #endif
 }
 
 void UCrashlyticsFunctions::CrashlyticsSetUserName(FString Name)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] setUserName:Name.GetNSString()];
-	});
+	[[Crashlytics sharedInstance] setUserName:Name.GetNSString()];
 #endif
 }
 
 void UCrashlyticsFunctions::CrashlyticsSetUserEmail(FString Email)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] setUserEmail:Email.GetNSString()];
-	});
+	[[Crashlytics sharedInstance] setUserEmail:Email.GetNSString()];
 #endif
 }
 
 void UCrashlyticsFunctions::CrashlyticsLogEvent(FString EventName)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString()];
 	});
 #endif
@@ -102,7 +92,7 @@ void UCrashlyticsFunctions::CrashlyticsLogEvent(FString EventName)
 void UCrashlyticsFunctions::CrashlyticsLogEventWithAttribute(FString EventName, FString AttributeKey, FString AttributeValue)
 {
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		NSDictionary* Attributes = [NSDictionary dictionaryWithObject:AttributeValue.GetNSString() forKey:AttributeKey.GetNSString()];
 		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString() attributes:Attributes];
 	});
@@ -115,7 +105,7 @@ void UCrashlyticsFunctions::CrashlyticsLogEventWithAttributes(FString EventName,
 		return;
 
 #if PLATFORM_IOS
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		NSDictionary* Attributes = [NSDictionary dictionaryWithObjects:GetNSStringArray(AttributeValues) forKeys:GetNSStringArray(AttributeKeys)];
 		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString() attributes:Attributes];
 	});

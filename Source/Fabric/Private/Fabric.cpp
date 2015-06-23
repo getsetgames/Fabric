@@ -36,7 +36,7 @@ void FFabric::StartupModule()
 		[Kits addObject:MoPubKit];
 	}
 	
-	dispatch_sync(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		[Fabric with:Kits];
 	});
 #endif
