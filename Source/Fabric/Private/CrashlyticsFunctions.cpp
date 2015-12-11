@@ -84,7 +84,7 @@ void UCrashlyticsFunctions::CrashlyticsLogEvent(FString EventName)
 {
 #if PLATFORM_IOS
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString()];
+		[Answers logCustomEventWithName:EventName.GetNSString() customAttributes:nil];
 	});
 #endif
 }
@@ -94,7 +94,7 @@ void UCrashlyticsFunctions::CrashlyticsLogEventWithAttribute(FString EventName, 
 #if PLATFORM_IOS
 	dispatch_async(dispatch_get_main_queue(), ^{
 		NSDictionary* Attributes = [NSDictionary dictionaryWithObject:AttributeValue.GetNSString() forKey:AttributeKey.GetNSString()];
-		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString() attributes:Attributes];
+		[Answers logCustomEventWithName:EventName.GetNSString() customAttributes:Attributes];
 	});
 #endif
 }
@@ -107,7 +107,7 @@ void UCrashlyticsFunctions::CrashlyticsLogEventWithAttributes(FString EventName,
 #if PLATFORM_IOS
 	dispatch_async(dispatch_get_main_queue(), ^{
 		NSDictionary* Attributes = [NSDictionary dictionaryWithObjects:GetNSStringArray(AttributeValues) forKeys:GetNSStringArray(AttributeKeys)];
-		[[Crashlytics sharedInstance] logEvent:EventName.GetNSString() attributes:Attributes];
+		[Answers logCustomEventWithName:EventName.GetNSString() customAttributes:Attributes];
 	});
 #endif	
 }
