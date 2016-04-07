@@ -9,11 +9,6 @@ namespace UnrealBuildTool.Rules
 {
 	public class Fabric : ModuleRules
 	{
-		private string ModulePath
-		{
-			get { return Path.GetDirectoryName( RulesCompiler.GetModuleFilename( this.GetType().Name ) ); }
-		}
-		
 		public Fabric(TargetInfo Target)
 		{
 			PublicIncludePaths.AddRange(
