@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "UObject/Object.h"
+#include "UObject/ScriptMacros.h"
 #include "FabricSettings.generated.h"
 
 UCLASS(config = Engine, defaultconfig)

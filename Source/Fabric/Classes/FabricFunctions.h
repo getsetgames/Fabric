@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "UObject/Object.h"
+#include "UObject/ScriptMacros.h"
 #include "FabricFunctions.generated.h"
 
 UCLASS(NotBlueprintable)

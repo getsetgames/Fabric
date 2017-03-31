@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "Components/ActorComponent.h"
 #include "FabricComponent.generated.h"
 
 UCLASS(ClassGroup=Fabric, HideCategories=(Activation, "Components|Activation", Collision), meta=(BlueprintSpawnableComponent))
