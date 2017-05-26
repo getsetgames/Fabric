@@ -9,7 +9,7 @@ namespace UnrealBuildTool.Rules
 {
 	public class Fabric : ModuleRules
 	{
-		public Fabric(TargetInfo Target)
+		public Fabric(ReadOnlyTargetRules Target) : base(Target)
 		{
 			PublicIncludePaths.AddRange(
 				new string[] {
